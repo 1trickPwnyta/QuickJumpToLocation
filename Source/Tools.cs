@@ -7,23 +7,23 @@ namespace QuickJumpToLocation
 {
     public static class Tools
     {
-        public static void QuickJumpToLocation(Letter __instance, Rect rect)
+        public static void QuickJumpToLocation(Letter letter, Rect rect)
         {
-            if (__instance != null)
+            if (letter != null)
             {
                 if (Event.current.type == EventType.MouseDown && Event.current.button == 2 && Mouse.IsOver(rect))
                 {
-                    bool validTarget = __instance.lookTargets.IsValid();
-                    bool canDismiss = __instance.CanDismissWithRightClick;
+                    bool validTarget = letter.lookTargets.IsValid();
+                    bool canDismiss = letter.CanDismissWithRightClick;
 
                     if (validTarget)
                     {
-                        CameraJumper.TryJumpAndSelect(__instance.lookTargets.TryGetPrimaryTarget());
+                        CameraJumper.TryJumpAndSelect(letter.lookTargets.TryGetPrimaryTarget());
                     }
 
                     if (canDismiss)
                     {
-                        Find.LetterStack.RemoveLetter(__instance);
+                        Find.LetterStack.RemoveLetter(letter);
                     }
 
                     if (validTarget || canDismiss)

@@ -13,22 +13,23 @@ namespace QuickJumpToLocation
             {
                 if (Event.current.type == EventType.MouseDown && Event.current.button == 2 && Mouse.IsOver(rect))
                 {
-                    bool validTarget = letter.lookTargets.IsValid();
-                    bool canDismiss = letter.CanDismissWithRightClick;
+                    bool useEvent = false;
 
-                    if (validTarget)
+                    if (letter.lookTargets.IsValid())
                     {
                         CameraJumper.TryJumpAndSelect(letter.lookTargets.TryGetPrimaryTarget());
+                        useEvent = true;
                     }
 
-                    if (canDismiss)
+                    if (letter.CanDismissWithRightClick && !QuickJumpToLocationSettings.JumpOnly)
                     {
                         Find.LetterStack.RemoveLetter(letter);
+                        SoundDefOf.Click.PlayOneShotOnCamera(null);
+                        useEvent = true;
                     }
 
-                    if (validTarget || canDismiss)
+                    if (useEvent)
                     {
-                        SoundDefOf.Click.PlayOneShotOnCamera(null);
                         Event.current.Use();
                     }
                 }

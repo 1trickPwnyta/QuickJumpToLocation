@@ -8,6 +8,14 @@
 	</supportedVersions>
 	<description>
 You can middle-click on a letter to simultaneously dismiss it and jump to the location it references (if there is one).
+
+=== Updates ===
+03/10/2022: Added option to jump to location only without dismissing.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+If you enjoy my work and want to support me and my family, I take donations at:
+https://ko-fi.com/1trickpwnyta
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	</description>
 	<url>https://github.com/1trickPwnyta/QuickJumpToLocation</url>
 	<modDependencies>

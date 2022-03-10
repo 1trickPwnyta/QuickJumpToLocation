@@ -61,6 +61,7 @@
     <Compile Include="Patch_Letter_DrawButtonAt.cs" />
     <Compile Include="QuickJumpToLocationMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickJumpToLocationSettings.cs" />
     <Compile Include="Refs.cs" />
     <Compile Include="Tools.cs" />
   </ItemGroup>
